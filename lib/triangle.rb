@@ -12,7 +12,7 @@ class Triangle
   
   
   def kind 
-     if sides.any? == 0 || sides.any? == nil
+     if sides.any? { |side| side <= 0 } || sides.any? == nil
        raise TriangleError => error 
      elsif sides.uniq.length == 1
         :equilateral
