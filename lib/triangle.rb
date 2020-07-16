@@ -28,5 +28,5 @@ class Triangle
     def message 
       "Not a triangle."
     end 
-
+end 
 end #class end 
