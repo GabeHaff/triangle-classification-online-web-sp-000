@@ -1,3 +1,29 @@
 class Triangle
-  # write code here
-end
+  attr_accessor :side1, :side2, :side3, :sides
+  
+ 
+    
+  def initialize(side1,side2,side3)
+  @side1 = side1
+  @side2 = side2
+  @side3 = side3
+  @sides = [side1, side2, side3]
+  end 
+  
+  
+  def kind 
+     if sides.any? == 0 || sides.any? == nil || sides.any 
+       raise TriangleError => error 
+     elsif sides.uniq.length == 1
+        :equilateral
+      elsif sides.uniq.length == 2
+        :isosceles
+      else
+        :scalene
+      end
+    end
+   end 
+  
+   class TriangleError < StandardError
+  
+end #class end 
