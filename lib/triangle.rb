@@ -12,7 +12,7 @@ class Triangle
   
   
   def kind 
-     sides.any? { |side| side <= 0 } || sides[0] + sides[1] <= sides[2] || sides.any? == nil
+     if sides.any? { |side| side <= 0 } || sides[0] + sides[1] <= sides[2] || sides.any? == nil
        raise TriangleError => error
      elsif sides.uniq.length == 1
         :equilateral
@@ -22,7 +22,7 @@ class Triangle
         :scalene
       end
     end
-   end 
+   
   
   class TriangleError < StandardError
     def message 
