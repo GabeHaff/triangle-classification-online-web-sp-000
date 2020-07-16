@@ -1,5 +1,5 @@
 class Triangle
-  attr_accessor :side1, :side2, :side3, :sides
+  attr_reader :side1, :side2, :side3, :sides
   
   
     
@@ -12,7 +12,7 @@ class Triangle
   
   
   def kind 
-     if sides.any? { |side| side <= 0 } || sides[0] + sides[1] <= sides[2] #|| sides.any? == nil
+     if sides.any? { |side| side <= 0 } || sides[0] + sides[1] <= sides[2] || sides.any? == nil
        raise TriangleError => error 
      elsif sides.uniq.length == 1
         :equilateral
